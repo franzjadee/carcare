@@ -1,51 +1,51 @@
 <?php 
-session_start();
+// session_start();
 
-	include("../js/connection.php");
-	include("../js/functions.php");
+// 	include("../js/connection.php");
+// 	include("../js/functions.php");
 
-	$check = "";
+// 	$check = "";
 
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
+// 	if($_SERVER['REQUEST_METHOD'] == "POST")
+// 	{
 		
-		$email = $_POST['email'];
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$rep_password = $_POST['rep_password'];
+// 		$email = $_POST['email'];
+// 		$username = $_POST['username'];
+// 		$password = $_POST['password'];
+// 		$rep_password = $_POST['rep_password'];
 
-		if(!empty($username) && !empty($password) && !is_numeric($username))
-		{ if ($password == $rep_password){
-			$checkQuery = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
-			$checkResult = mysqli_query($con, $checkQuery);
+// 		if(!empty($username) && !empty($password) && !is_numeric($username))
+// 		{ if ($password == $rep_password){
+// 			$checkQuery = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
+// 			$checkResult = mysqli_query($con, $checkQuery);
 
-			if($checkResult)
-			{
-				if($checkResult && mysqli_num_rows($checkResult) > 0)
-				{
-					$check = "Username / Email Already Taken!";
-				}else
-					{
+// 			if($checkResult)
+// 			{
+// 				if($checkResult && mysqli_num_rows($checkResult) > 0)
+// 				{
+// 					$check = "Username / Email Already Taken!";
+// 				}else
+// 					{
 
-					$uid = random_num(20);
-					$query = "insert into users (uid,email,username,password) values ('$uid','$email','$username','$password')";
+// 					$uid = random_num(20);
+// 					$query = "insert into users (uid,email,username,password) values ('$uid','$email','$username','$password')";
 
-					mysqli_query($con, $query);
+// 					mysqli_query($con, $query);
 
-					header("Location: login.php");
-					die;
-					}
+// 					header("Location: login.php");
+// 					die;
+// 					}
 				
-			}
-		}else{
-			$check = "Passwords don't Match!";
-		}
+// 			}
+// 		}else{
+// 			$check = "Passwords don't Match!";
+// 		}
 			
-			}else
-		{
-			$check = "Missing Information!";
-		}
-	}
+// 			}else
+// 		{
+// 			$check = "Missing Information!";
+// 		}
+// 	}
 ?>
 
 
@@ -59,10 +59,10 @@ session_start();
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column min-vh-100 " style="background-color:white;">
+<body class="d-flex flex-column min-vh-100 " style="background-color:rgb(225, 227, 230);">
 
   <div class="d-flex justify-content-center align-items-center flex-grow-1">
-		<div class="border rounded-5 p-4" style="width: 300px; background-color: #f8f9fa;">
+		<div class="border rounded-5 p-4" style="width: 300px; background-color:rgb(232, 234, 236);">
 			<img src="../css/images/carcare_logo.png" alt="Car Care Logo" class="img-fluid mx-auto d-block mb-3" style="max-height: 400px;">
 				
 			<form method="post"> 
@@ -88,7 +88,9 @@ session_start();
 				</div>
 
 				<p class="text-danger">
-					<?php echo $check; ?>
+					<?php
+					//  echo $check; 
+					 ?>
 				</p>
 			</form>
 

@@ -9,10 +9,10 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column min-vh-100 " style="background-color:white;">
+<body class="d-flex flex-column min-vh-100 " style="background-color:rgb(225, 227, 230);">
 
   <div class="d-flex justify-content-center align-items-center flex-grow-1">
-		<div class="border rounded-5 p-4" style="width: 300px; background-color: #f8f9fa;">
+		<div class="border rounded-5 p-4" style="width: 300px; background-color:rgb(232, 234, 236);">
 			<img src="../css/images/carcare_logo.png" alt="Car Care Logo" class="img-fluid mx-auto d-block mb-3" style="max-height: 400px;">
 				
 			<button type="button" class="btn btn-outline-dark w-100 mb-2" onclick="login()">Log In</button>

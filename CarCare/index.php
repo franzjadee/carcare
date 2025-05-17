@@ -1,10 +1,10 @@
 <?php 
-session_start();
+// session_start();
 
-	include("./js/connection.php");
-	include("./js/functions.php");
+// 	include("./js/connection.php");
+// 	include("./js/functions.php");
 
-	$user_data = check_login($con);
-	
+// 	$user_data = check_login($con);
+	header("Location: view/welcome.php");
+	die;
 ?>
-

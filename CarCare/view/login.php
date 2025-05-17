@@ -1,48 +1,48 @@
 <?php 
 
-session_start();
+// session_start();
 
-	include("../js/connection.php");
-	include("../js/functions.php");
+// 	include("../js/connection.php");
+// 	include("../js/functions.php");
 
-	$check = "";
+// 	$check = "";
 
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
-		//something was posted
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+// 	if($_SERVER['REQUEST_METHOD'] == "POST")
+// 	{
+// 		//something was posted
+// 		$username = $_POST['username'];
+// 		$password = $_POST['password'];
 
-		if(!empty($username) && !empty($password) && !is_numeric($username))
-		{
+// 		if(!empty($username) && !empty($password) && !is_numeric($username))
+// 		{
 
-			//read from database
-			$query = "select * from users where username = '$username' limit 1";
-			$result = mysqli_query($con, $query);
+// 			//read from database
+// 			$query = "select * from users where username = '$username' limit 1";
+// 			$result = mysqli_query($con, $query);
 
-			if($result)
-			{
-				if($result && mysqli_num_rows($result) > 0)
-				{
+// 			if($result)
+// 			{
+// 				if($result && mysqli_num_rows($result) > 0)
+// 				{
 
-					$user_data = mysqli_fetch_assoc($result);
+// 					$user_data = mysqli_fetch_assoc($result);
 					
-					if($user_data['password'] === $password)
-					{
+// 					if($user_data['password'] === $password)
+// 					{
 
-						$_SESSION['uid'] = $user_data['uid'];
-						header("Location: ../index.php");
-						die;
-					}
-				}
-			}
+// 						$_SESSION['uid'] = $user_data['uid'];
+// 						header("Location: ../index.php");
+// 						die;
+// 					}
+// 				}
+// 			}
 			
-			$check = "Incorrect Username or Password";
-		}else
-		{
-			$check = "Incorrect Username or Password";
-		}
-	}
+// 			$check = "Incorrect Username or Password";
+// 		}else
+// 		{
+// 			$check = "Incorrect Username or Password";
+// 		}
+// 	}
 
 
 	
@@ -58,10 +58,10 @@ session_start();
     <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column min-vh-100 " style="background-color:white;">
+<body class="d-flex flex-column min-vh-100 " style="background-color:rgb(225, 227, 230);">
 
   <div class="d-flex justify-content-center align-items-center flex-grow-1">
-		<div class="border rounded-5 p-4" style="width: 300px; background-color: #f8f9fa;">
+		<div class="border rounded-5 p-4" style="width: 300px; background-color:rgb(232, 234, 236);">
 			<img src="../css/images/carcare_logo.png" alt="Car Care Logo" class="img-fluid mx-auto d-block mb-3" style="max-height: 400px;">
 
 			<form method="post"> 
@@ -79,7 +79,9 @@ session_start();
 				</div>
 
 				<p class="text-danger">
-					<?php echo $check; ?>
+					<?php
+					//  echo $check; 
+					 ?>
 				</p>
 			</form>
 		</div>
