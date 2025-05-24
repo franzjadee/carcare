@@ -66,6 +66,15 @@
 			<img src="../css/images/carcare_logo.png" alt="Car Care Logo" class="img-fluid mx-auto d-block mb-3" style="max-height: 400px;">
 				
 			<form method="post"> 
+
+				<div class="mb-3">
+					<input type="text" name="firstname" class="form-control" placeholder="First Name">
+				</div>
+
+				<div class="mb-3">
+					<input type="text" name="lastname" class=" form-control" placeholder="Last Name">
+				</div>
+
 				<div class="mb-3">
 					<input type="text" name="username" class="form-control" placeholder="Username">
 				</div>
