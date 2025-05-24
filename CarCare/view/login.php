@@ -75,7 +75,8 @@
 
 				<div class="d-flex mb-2">
 					<button type="button" class="btn btn-outline-dark w-50 me-2" onclick="back()">Back</button>
-					<input type="submit" value="Log In" class="btn btn-outline-dark w-50 me-2">
+					<button type="button" class="btn btn-outline-dark w-50 me-2" onclick="test()">Log In</button>
+					<!-- <input type="submit" value="Log In"class="btn btn-outline-dark w-50 me-2"> -->
 				</div>
 
 				<p class="text-danger">
@@ -108,6 +109,10 @@
 
 	function back(){
 		window.location.href = "welcome.php";
+	}
+
+	function test(){
+		window.location.href = "userpage.php";
 	}
 
 
